@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" action="svTTPost">
+		MSSV: <input type="text" name="mssv"> <br>
+		Họ tên: <input type="text" name="hoten"> <br>
+		Năm sinh: <input type="text" name="namsinh"> <br>
+		Giới tính: <input type="text" name="gioitinh"> <br>
+		<input type="submit" value="Xuất thông tin"/>
+	</form>
+	<span style="font-size: 20px"> THÔNG TIN </span> <p>
+	<span th:text="${mssv1}"/> <br>
+	<span th:text="${hoten1}"/> <br>
+	<span th:text="${namsinh1}"/> <br>
+	<span th:text="${gioitinh1}"/>
+</body>
+</html>

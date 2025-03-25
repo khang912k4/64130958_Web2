@@ -1,0 +1,11 @@
+img {
+  height: 200px;
+  object-fit: fill;
+}
+footer{
+	position: fixed;
+	text-align: center;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}

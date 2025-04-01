@@ -8,12 +8,6 @@ public class Post {
 		this.content=content;
 		this.categoryID=categoryID;
 	}
-	public Post() {
-		this.id="";
-		this.title="";
-		this.content="";
-		this.categoryID="";
-	}
 	public String getID() {
 		return this.id;
 	}
@@ -25,5 +19,24 @@ public class Post {
 	}
 	public String getCategoryID() {
 		return this.categoryID;
+	}
+	public void setID(final String id) {
+		this.id=id;
+	}
+	 
+	public void setPageName(final String title) {
+		this.title=title;
+	}
+	 
+	public void setKeyword(final String content) {
+		this.content=content;
+	}
+	 
+	public void setParentPageID(final String categoryID) {
+		this.categoryID=categoryID;
+	}
+	 
+	public Post(){
+		
 	}
 }

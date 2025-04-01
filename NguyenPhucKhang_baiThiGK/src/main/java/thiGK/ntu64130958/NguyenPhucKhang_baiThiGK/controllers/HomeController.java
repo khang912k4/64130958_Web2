@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import thiGK.ntu64130958.NguyenPhucKhang_baiThiGK.models.Page;
 import thiGK.ntu64130958.NguyenPhucKhang_baiThiGK.models.Post;
@@ -32,7 +34,12 @@ public class HomeController {
 	}
 	@GetMapping("/page/new")
 	public String Page_Addnew(Model model) {
-		
+		model.addAttribute("page",new Page());
+		return "Page/pageAddnew";
+	}
+	@PostMapping("page/new")
+	public String xuatPage_Addnew(@ModelAttribute Page page) {
+		this.dsPage.add(page);
 		return "Page/pageAddnew";
 	}
 	@GetMapping("/page/view/{id}")
@@ -43,8 +50,6 @@ public class HomeController {
 	public String Page_Delete(Model model) {
 		return "Page/pageDelete";
 	}
-
-	
 	@GetMapping("/post/all")
 	public String Post_List(Model model) {
 		model.addAttribute("dsPost",this.dsPost);
@@ -53,6 +58,11 @@ public class HomeController {
 	}
 	@GetMapping("/post/new")
 	public String Post_Addnew(Model model) {
+		return "Post/postAddnew";
+	}
+	@PostMapping("post/new")
+	public String xuatPost_Addnew(@ModelAttribute Post post) {
+		this.dsPost.add(post);
 		return "Post/postAddnew";
 	}
 	@GetMapping("/post/view/{id}")

@@ -15,23 +15,24 @@ public class HomeController {
 	List<Page> dsPage = new ArrayList<>();
 	List<Post> dsPost = new ArrayList<>();
 	public HomeController() {
-		
+		this.dsPage.add(new Page("123","Khang","npk","sinh vien","234"));
 	}
 	@GetMapping("/page/all")
 	public String Page_List(Model model) {
 		model.addAttribute("dsPage",this.dsPage);
-		return "pageList";
+		model.addAttribute("page",new Page());
+		return "Page/pageList";
 	}
-	@GetMapping("page/new")
+	@GetMapping("/page/new")
 	public String Page_Addnew(Model model) {
-		return "pageAddnew";
+		return "Page/pageAddnew";
 	}
-	@GetMapping("page/view/{id}")
+	@GetMapping("/page/view/{id}")
 	public String Page_View(Model model) {
-		return "pageView";
+		return "Page/pageView";
 	}
-	@GetMapping("page/delete/id")
+	@GetMapping("/page/delete/id")
 	public String Page_Delete(Model model) {
-		return "pageDelete";
+		return "Page/pageDelete";
 	}
 }

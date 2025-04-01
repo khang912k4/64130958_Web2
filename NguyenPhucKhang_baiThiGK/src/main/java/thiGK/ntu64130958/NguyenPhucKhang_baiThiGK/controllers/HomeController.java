@@ -16,6 +16,9 @@ public class HomeController {
 	List<Post> dsPost = new ArrayList<>();
 	public HomeController() {
 		this.dsPage.add(new Page("123","Khang","npk","sinh vien","234"));
+		this.dsPage.add(new Page("123","Khang","npk","sinh vien","234"));
+		this.dsPage.add(new Page("123","Khang","npk","sinh vien","234"));
+		this.dsPage.add(new Page("123","Khang","npk","sinh vien","234"));
 	}
 	@GetMapping("/page/all")
 	public String Page_List(Model model) {

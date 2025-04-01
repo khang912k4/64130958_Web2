@@ -36,7 +36,7 @@
                         data-parentPageID="${page.parentPageID}">
                     edit
                 </button>
-                <a th:href="@{'/deleteStudent/' + ${page.id}}" class="btn btn-danger btn-sm"
+                <a th:href="@{'/page/delete/' + ${page.id}}" class="btn btn-danger btn-sm"
                    onclick="return confirm('Bạn có chắc muốn xóa page này?')">delete</a>
             </td>
         </tr>
@@ -58,11 +58,11 @@
             <div class="modal-body">
                 <form th:action="@{/page/new}" th:object="${page}" method="post">
                     <div class="form-group">
-                        <label for="pageName">Họ và tên:</label>
+                        <label for="pageName">pageName:</label>
                         <input type="text" class="form-control" id="pageName" th:field="*{pageName}" required>
                     </div>
                     <div class="form-group">
-                        <label for="parentPageID">Điểm trung bình:</label>
+                        <label for="parentPageID">parentPageID:</label>
                         <input type="number" step="0.1" class="form-control" id="parentPageID" th:field="*{parentPageID}" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Lưu</button>
@@ -78,28 +78,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Sửa thông tin sinh viên</h5>
+                <h5 class="modal-title">Edit</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div class="modal-body">
-                <form id="editStudentForm" th:action="@{/editStudent}" method="post">
-                    <div class="form-group">
-                        <label>id:</label>
-                        <input type="text" class="form-control" id="editid" name="id" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="editpageName">pageName:</label>
-                        <input type="text" class="form-control" id="editpageName" name="pageName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="editparentPageID">parentPageID:</label>
-                        <input type="number" step="0.1" class="form-control" id="editparentPageID" name="parentPageID" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Lưu</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                </form>
             </div>
         </div>
     </div>

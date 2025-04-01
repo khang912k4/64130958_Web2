@@ -1,10 +1,68 @@
-<!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    table {
+      width: 80%;
+      margin: 50px auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 12px 20px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    td {
+      font-size: 16px;
+      color: #555;
+    }
+
+    th, td {
+      font-size: 18px;
+    }
+
+  </style>
 </head>
 <body>
-
+  <a href="/post/new">Add New Page</a>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>title</th>
+      <th>categoryID</th>
+      <th></th>
+    </tr>
+    <tr th:each="post : ${dsPost}" th:object="${post}" >
+      <td th:text="*{getID()}"></td>
+      <td th:text="*{getTitle()}"></td>
+      <td th:text="*{getCategoryID()}"></td>
+      <td>
+      <a href="#">view</a>
+      <a href="#">edit</a>
+      <a href="#">delete</a>
+      </td>
+    </tr>
+  </table>
 </body>
-</html>
